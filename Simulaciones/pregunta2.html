@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilo.css">
+
+    <title>Simulacion1</title>
+</head>
+<body>
+    <div class="container2">
+        <h1>Realiza el siguiente ejercicio.</h1><br>
+
+        <h2>Organiza los elementos segun su posicion en la tabla periodica</h2>
+
+        <img src="/imagenes/1bbcd64c-9bf6-d722-201c-cffa0f332c68.png" width="38%" alt="Tabla periodica" align="left" hspace="50">>
+    
+        <div class="containerOp" id="lista" ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+            <div class="opciones2" id="opcion1" draggable="true" ondragstart="arrastrar(event)">Au</div>
+            <div class="opciones2" id="opcion2" draggable="true" ondragstart="arrastrar(event)">Lv</div>
+            <div class="opciones2" id="opcion3" draggable="true" ondragstart="arrastrar(event)">Sc</div>
+            <div class="opciones2" id="opcion4" draggable="true" ondragstart="arrastrar(event)">Tc</div>
+        </div>
+        <div class="mensajes2" id="mensaje"></div>
+        <button id="confirmar" onclick="confirmar()">Confirmar</button>
+        <button class="continuar" onclick="continuar()"><b>Finalizar</b></button>
+    </div>
+    <script>
+        let opcionAr;
+
+        function arrastrar(accion){
+            opcionAr= accion.target;
+        }
+        function permitirSoltar(accion){
+            accion.preventDefault();
+        }
+        function soltar(accion){
+            accion.preventDefault();
+            let almacenamiento= document.getElementById("lista");
+            let opcionFinal= accion.target.closest(".opciones2");
+            if(opcionFinal && opcionFinal!== opcionAr){
+                almacenamiento.insertBefore(opcionAr, opcionFinal.nextSibling);
+            }
+        }
+        function confirmar(){
+            let mensaje= document.getElementById("mensaje");
+            let lista= document.getElementById("lista");
+            let ordenBueno= ["opcion3","opcion4","opcion1","opcion2"];
+            let hijos= Array.from(lista.children);
+            let ordenActual= hijos.map(el=>el.id);
+
+            if(JSON.stringify(ordenActual)=== JSON.stringify(ordenBueno)){
+                mensaje.textContent= "Respuesta correcta";
+                mensaje.style.backgroundColor= "yellow";
+            }else{
+                mensaje.textContent= "Respuesta incorrecta";
+                mensaje.style.backgroundColor= "red";
+            }
+        }
+        var conMensaje= mensaje;
+        function continuar(){
+            if(conMensaje.textContent=="Respuesta correcta"){
+                window.location.href = 'felicitaciones.html';
+            }else{
+                alert("Selecciona la respuesta correcta para continuar");
+            }
+        }
+        
+    </script>
+    <!-- <a href="/html/pregunta2.html">
+        <p id="preguntas" hidden>CONTINUAR</p>
+    </a> -->
+    
+</body>
+</html>

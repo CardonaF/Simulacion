@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilo.css">
+
+    <title>Simulacion1</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Responde las siguientes preguntas</h1><br>
+
+        <h2>¿Cual es el compuesto quimico del agua?</h2>
+
+    
+        <button class="opciones" onclick="respuesta(this)"><b>H2O</b></button>
+        <button class="opciones" onclick="respuesta(this)"><b>H</b></button>
+        <button class="opciones" onclick="respuesta(this)"><b>Li</b></button>
+        <button class="opciones" onclick="respuesta(this)"><b>Na</b></button>
+        <div class="mensajes" id="mensaje"></div>
+        <!-- <div class="mensajes" id="next"></div> -->
+        <button class="continuar" onclick="continuar()"><b>CONTINUAR</b></button>
+    </div>
+    <script>
+        function respuesta(boton){
+            let buena= "H2O";
+            let mensaje= document.getElementById("mensaje");
+            // let next= document.getElementById("next")
+
+            if(boton.textContent === buena){
+                mensaje.textContent="Respuesta buena";
+                mensaje.style.backgroundColor="yellow";
+                
+                // next.textContent="CONTINUAR";
+                // next.style.backgroundColor="white";
+            }else{
+                mensaje.textContent= "Respuesta es incorrecta";
+                mensaje.style.backgroundColor="red";
+            }
+        }
+        var conMensaje= mensaje;
+        function continuar(){
+            if(conMensaje.textContent=="Respuesta buena"){
+                window.location.href = 'pregunta2.html';
+            }else{
+                alert("Selecciona la respuesta correcta para continuar");
+            }
+        }
+        
+    </script>
+    <!-- <a href="/html/pregunta2.html">
+        <p id="preguntas" hidden>CONTINUAR</p>
+    </a> -->
+    
+</body>
+</html>
+
+<!-- <form>
+        <div class="container">
+            <label class="op" for="respuesta1">H2Ohhhhhhhhhhhhh</label><br>
+
+            <label class="op" for="respuesta2">H</label><br>
+            
+            <label class="op" for="respuesta3">Li</label><br>
+            
+            <label class="op" for="respuesta4">Na</label><br>
+            
+            <button id="button" type="submit">Respuesta final</button>
+        </div>
+
+    </form> -->
