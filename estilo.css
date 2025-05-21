@@ -28,7 +28,7 @@ h2{
     padding: 40px; */
 }
 body{
-    background-image: quimica1.jpg;
+    background-image: url(../quimica1.jpg);
 }
 html, body{
     margin: 0;
