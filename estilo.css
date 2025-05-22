@@ -133,7 +133,7 @@ html, body{
     cursor: pointer;
 }
 .container{
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     margin-top: 120px;
     margin-left: 100px;
     margin-right: 100px;
@@ -142,7 +142,7 @@ html, body{
     border-radius: 100px;
 }
 .container2{
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     margin-top: 120px;
     margin-left: 100px;
     margin-right: 100px;
@@ -151,7 +151,7 @@ html, body{
     border-radius: 100px;
 }
 .containerOp{
-    background-color: rgba(230, 226, 226, 0.4);
+    background-color: rgba(230, 226, 226, 0.6);
     margin-left: 44%;
     margin-right: 148px;
     padding-top: 14px;
