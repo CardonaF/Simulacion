@@ -50,16 +50,16 @@
             let ordenActual= hijos.map(el=>el.id);
 
             if(JSON.stringify(ordenActual)=== JSON.stringify(ordenBueno)){
-                mensaje.textContent= "Respuesta correcta";
+                mensaje.textContent= "Respuesta Correcta";
                 mensaje.style.backgroundColor= "yellow";
             }else{
-                mensaje.textContent= "Respuesta incorrecta";
+                mensaje.textContent= "Respuesta Incorrecta";
                 mensaje.style.backgroundColor= "red";
             }
         }
         var conMensaje= mensaje;
         function continuar(){
-            if(conMensaje.textContent=="Respuesta correcta"){
+            if(conMensaje.textContent=="Respuesta Correcta"){
                 window.location.href = 'felicitaciones.html';
             }else{
                 alert("Selecciona la respuesta correcta para continuar");
