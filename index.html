@@ -29,19 +29,19 @@
             // let next= document.getElementById("next")
 
             if(boton.textContent === buena){
-                mensaje.textContent="Respuesta buena";
+                mensaje.textContent="Respuesta Correcta";
                 mensaje.style.backgroundColor="yellow";
                 
                 // next.textContent="CONTINUAR";
                 // next.style.backgroundColor="white";
             }else{
-                mensaje.textContent= "Respuesta es incorrecta";
+                mensaje.textContent= "Respuesta es Incorrecta";
                 mensaje.style.backgroundColor="red";
             }
         }
         var conMensaje= mensaje;
         function continuar(){
-            if(conMensaje.textContent=="Respuesta buena"){
+            if(conMensaje.textContent=="Respuesta Correcta"){
                 window.location.href = 'pregunta2.html';
             }else{
                 alert("Selecciona la respuesta correcta para continuar");
